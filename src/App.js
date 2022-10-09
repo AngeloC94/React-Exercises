@@ -5,7 +5,7 @@ import { Welcome } from "./Welcome"
 export class App extends React.Component {
     render() {
         return <div><Hello />
-            <Welcome />
+            <Welcome age='77' />
         </div>
     }
 }
