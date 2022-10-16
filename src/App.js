@@ -4,16 +4,18 @@ import { ClickTracker } from "./ClickTracker"
 import { Counter } from "./Counter"
 import { Hello } from "./Hello"
 import { InteractiveWelcome } from "./InteractiveWelcome"
+import { Login } from "./Login"
 
 export class App extends React.Component {
     render() {
-        return <div>
+        return <React.Fragment>
             <Hello />
             <InteractiveWelcome />
             <Counter initialValue={0} incrementAmount={1} incrementInterval={1000} />
             <ClickCounter />
             <ClickTracker />
-        </div>
+            <Login />
+        </React.Fragment>
     }
 }
 
