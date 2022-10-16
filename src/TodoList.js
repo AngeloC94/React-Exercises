@@ -12,15 +12,16 @@ export class TodoList extends React.Component {
     }
 
 
-    handleInputChange = (e) => {
+    inputChange = (e) => {
         const value = e.target.value
 
         this.setState({
+            input: e.target.value,
             newitem: value
         })
     }
 
-    handleSubmit = (e) => {
+    addNewListItem = (e) => {
         const value = e.target.value
 
         this.setState({
@@ -32,6 +33,11 @@ export class TodoList extends React.Component {
             input : ""
         })
     }
+    listReset = () => {
+        this.setState({
+            items: []
+        })
+    }
 
 
     render() {
@@ -40,9 +46,10 @@ export class TodoList extends React.Component {
                 <input
                     name="input"
                     value={this.state.input}
-                    onChange={this.handleInputChange}
+                    onChange={this.inputChange}
                 />
-                <button onClick={this.handleSubmit}>Add new Item</button>
+                <button onClick={this.addNewListItem}>Add new Item</button>
+                <button onClick={this.listReset}>Reset Items</button>
 
                 <ul>
                     {this.state.items.map((todo, index) => (
