@@ -28,6 +28,9 @@ export class TodoList extends React.Component {
         })
 
         this.state.items.push(this.state.newitem)
+        this.setState({
+            input : ""
+        })
     }
 
 
