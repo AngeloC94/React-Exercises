@@ -20,7 +20,7 @@ export class App extends React.Component {
             <Login />
             <UncontrolledLogin />
             <TodoList />
-            <Container />
+            <Container title='Lorem Ipsum'/>
         </React.Fragment>
     }
 }

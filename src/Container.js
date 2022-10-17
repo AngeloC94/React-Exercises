@@ -1,8 +1,10 @@
 import React from "react";
 
-export function Container(){
+export function Container(props){
     return (
-        <div className="container"></div>
+        <div className="container">
+            <h1>{props.title}</h1>
+        </div>
 
         
     )
