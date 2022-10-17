@@ -1,6 +1,13 @@
 .welcome {
     background-color: #f0ebe1;
     color: #8b7f75;
-    border: 1px solid black;
+    border: 1px solid #000000;
     width: fit-content;
+    margin-top: 2px;
+}
+
+.container{
+    background-color: #f0ebe1;
+    border: 1px solid #ff0000;
+    
 }
