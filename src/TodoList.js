@@ -40,10 +40,10 @@ export class TodoList extends React.Component {
     }
 
     removeListItem = (index) => {
-        let newArray = [...this.state.items]
-        newArray.splice(index, 1)
+        let renewArray = [...this.state.items]
+        renewArray.splice(index, 1)
         this.setState({
-            items : newArray
+            items : renewArray
         })
     }
 
