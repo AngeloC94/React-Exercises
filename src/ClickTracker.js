@@ -4,7 +4,7 @@ export class ClickTracker extends React.Component {
     state = {
         name: "",
     }
-    buttonHandlerEvent = (event) => {
+    buttonEvent = (event) => {
         this.setState(() => {
             return {
                 name: event.target.name
@@ -15,9 +15,9 @@ export class ClickTracker extends React.Component {
     render() {
         return (<React.Fragment>
             <h1>This is the {this.state.name} button</h1>
-            <button name="first" onClick={this.buttonHandlerEvent}>First</button>
-            <button name="second" onClick={this.buttonHandlerEvent}>Two</button>
-            <button name="third" onClick={this.buttonHandlerEvent}>Three</button>
+            <button name="first" onClick={this.buttonEvent}>First</button>
+            <button name="second" onClick={this.buttonEvent}>Two</button>
+            <button name="third" onClick={this.buttonEvent}>Three</button>
         </React.Fragment>)
     }
 }
