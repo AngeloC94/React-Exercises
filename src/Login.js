@@ -18,13 +18,11 @@ export class Login extends React.Component {
         })
     }
 
-    onLogin = (event) => {
-        console.log(event)
-        const verify = event.target.disabled
+    onLogin = (e) => {
+        const verify = e.target.disabled
         this.setState({
             disabled: verify
         })
-        
     }
 
     render() {
