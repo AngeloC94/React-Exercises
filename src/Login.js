@@ -6,7 +6,6 @@ export class Login extends React.Component {
         username: "",
         password: "",
         remember: false,
-        disabled: true,
     }
 
     inputEvent = (event) => {
@@ -21,12 +20,6 @@ export class Login extends React.Component {
 
     }
 
-    onLogin = (e) => {
-        const verify = e.target.disabled
-        this.setState({
-            disabled: verify
-        })
-    }
 
     onReset = () => {
         this.setState({

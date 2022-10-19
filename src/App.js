@@ -9,6 +9,9 @@ import { TodoList } from "./TodoList"
 import { UncontrolledLogin } from "./UncontrolledLogin"
 
 export class App extends React.Component {
+    onLogin = (state) => {
+        console.log(state)   
+    }
     render() {
         return <React.Fragment>
             <Hello />
@@ -16,7 +19,7 @@ export class App extends React.Component {
             <Counter initialValue={0} incrementAmount={1} incrementInterval={1000} />
             <ClickCounter />
             <ClickTracker />
-            <Login />
+            <Login onLogin={this.onLogin}/>
             <UncontrolledLogin />
             <TodoList />
         </React.Fragment>
