@@ -7,6 +7,9 @@ import { InteractiveWelcome } from "./InteractiveWelcome"
 import { Login } from "./Login"
 
 export class App extends React.Component {
+    onLogin = (state) => {
+		console.log(state);
+	};
     render() {
         return <React.Fragment>
             <Hello />
@@ -14,7 +17,7 @@ export class App extends React.Component {
             <Counter initialValue={0} incrementAmount={1} incrementInterval={1000} />
             <ClickCounter />
             <ClickTracker />
-            <Login />
+            <Login onLogin={this.onLogin}/>
         </React.Fragment>
     }
 }

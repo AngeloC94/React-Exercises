@@ -6,9 +6,8 @@ export class Login extends React.Component {
         username: "",
         password: "",
         remember: false,
-        disabled: true
     }
-    handleInputEvent = (event) => {
+    inputEvent = (event) => {
         const value = event.target.value
         const name = event.target.name
         const type = event.target.type
@@ -20,12 +19,6 @@ export class Login extends React.Component {
 
     }
 
-    onLogin = (e) => {
-        const verify = e.target.disabled
-        this.setState({
-            disabled: verify
-        })
-    }
 
     onReset = () => {
         this.setState({
@@ -37,10 +30,10 @@ export class Login extends React.Component {
 
     render() {
         return <div>
-            <input name="username" value={this.state.username} onChange={this.handleInputEvent} />
-            <input name="password" type="password" value={this.state.password} onChange={this.handleInputEvent} />
-            <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handleInputEvent} />
-            <button disabled={!this.state.username || !this.state.password} onClick={this.onLogin}>Login</button>
+            <input name="username" value={this.state.username} onChange={this.inputEvent} />
+            <input name="password" type="password" value={this.state.password} onChange={this.inputEvent} />
+            <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.inputEvent} />
+            <button disabled={!this.state.username || !this.state.password} onClick={this.props.onLogin(this.state)}>Login</button>
             <button onClick={this.onReset}>Reset</button>
         </div>
     }
