@@ -40,7 +40,7 @@ export class Login extends React.Component {
             <input name="username" value={this.state.username} onChange={this.inputEvent} />
             <input name="password" type="password" value={this.state.password} onChange={this.inputEvent} />
             <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.inputEvent} />
-            <button style={loginStyle} disabled={!this.state.username || !this.state.password} onClick={this.onLogin}>Login</button>
+            <button style={loginStyle} disabled={!this.state.username || !this.state.password} onClick={this.props.onLogin(this.state)}>Login</button>
             <button onClick={this.onReset}>Reset</button>
         </div>
     }
