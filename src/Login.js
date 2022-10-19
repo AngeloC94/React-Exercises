@@ -5,8 +5,7 @@ export class Login extends React.Component {
     state = {
         username: "",
         password: "",
-        remember: false,
-        disabled: true
+        remember: false
     }
     handleInputEvent = (event) => {
         const value = event.target.value
