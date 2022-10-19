@@ -14,7 +14,7 @@ export class App extends React.Component {
             <Counter initialValue={0} incrementAmount={1} incrementInterval={1000} />
             <ClickCounter />
             <ClickTracker />
-            <Login onLogin={this.onLogin}/>
+            <Login />
         </React.Fragment>
     }
 }
