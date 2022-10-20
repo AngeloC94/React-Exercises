@@ -19,8 +19,18 @@ export class App extends React.Component {
             <ClickTracker />
             <Login />
             <UncontrolledLogin />
-            <TodoList />
-            <Container title='Lorem Ipsum'/>
+            <TodoList render={(items, removeListItem) => {
+                return (
+                    items.map((todo, index) => (
+                        <div key={index}>
+                            {todo}
+                            <button key={index} onClick={() => { removeListItem(todo) }}>remove</button>
+                        </div>
+                    ))
+                )
+            }
+            } />
+            <Container title='Lorem Ipsum' />
         </React.Fragment>
     }
 }

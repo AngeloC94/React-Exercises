@@ -40,11 +40,11 @@ export class TodoList extends React.Component {
     }
 
     removeListItem = (index) => {
-        let renewArray = [...this.state.items]
-        renewArray.splice(index, 1)
-        this.setState({
-            items : renewArray
-        })
+        const filteredArray = this.state.items.filter((items) => items !== index);
+
+		this.setState({
+			items: [ ...filteredArray ]
+		});
     }
 
     render() {
@@ -58,13 +58,9 @@ export class TodoList extends React.Component {
                 <button onClick={this.addNewListItem}>Add new Item</button>
                 <button onClick={this.listReset}>Reset Items</button>
 
-                <ul>
-                    {this.state.items.map((todo, index) => (
-                        <li key={index}>{todo}
-                        <button key= {index} onClick={this.removeListItem.bind(this, index)}>Delete Item</button>
-                        </li>
-                    ))}
-                </ul>
+                <div>
+                    {this.props.render(this.state.items, this.removeListItem)}
+                </div>
             </React.Fragment>
         )
     }
