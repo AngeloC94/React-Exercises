@@ -1,16 +1,18 @@
 import React from 'react';
 
-export class ClickCounter extends React.Component {
-    state= {count : 0}
-    eCount = () => {
-        this.setState((state) =>{
-            return {count: state.count + 1}
-        })
-    }
-    render(){
-        return (<>    
-            <h1>{this.state.count}</h1>
-            <button onClick={this.eCount}>Click Me!</button>
-        </>)
-    }
+export default function ClickCounter({ initialValue = 0 }) {
+
+    const [counter, setCounter] = useState(initialValue)
+
+    function handleCounterIncrement() {
+        setCounter(counter + 1)
+    };
+
+
+    return (
+        <div>
+            <h2>Count : {counter}</h2>
+            <button onClick={handleCounterIncrement}>Increment</button>
+        </div>
+    );
 }
