@@ -8,8 +8,8 @@ import { InteractiveWelcome } from "./InteractiveWelcome"
 import { Login } from "./Login"
 import { TodoList } from "./TodoList"
 import { UncontrolledLogin } from "./UncontrolledLogin"
-import { DisplayLanguage } from "./DisplayLanguage"
-import { LanguageContext } from "./LanguageContext"
+
+import { LanguageComponent, LanguageContext } from "./LanguageContext"
 
 export class App extends React.Component {
     state = {
@@ -37,7 +37,7 @@ export class App extends React.Component {
             } />
             <Container title='Lorem Ipsum' />
             <LanguageContext.Provider value={this.state.language}>
-                <DisplayLanguage />
+                <LanguageComponent />
             </LanguageContext.Provider>
         </React.Fragment>
     }
