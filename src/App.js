@@ -8,13 +8,14 @@ import { InteractiveWelcome } from "./InteractiveWelcome"
 import { Login } from "./Login"
 import { TodoList } from "./TodoList"
 import { UncontrolledLogin } from "./UncontrolledLogin"
-
+import { Sum } from "./Sum"
+import Welcome from "./Welcome"
 import { LanguageComponent, LanguageContext } from "./LanguageContext"
 
 export class App extends React.Component {
     state = {
-		language: 'en'
-	};
+        language: 'en'
+    };
     render() {
         return <React.Fragment>
             <Hello />
@@ -39,6 +40,8 @@ export class App extends React.Component {
             <LanguageContext.Provider value={this.state.language}>
                 <LanguageComponent />
             </LanguageContext.Provider>
+            <Welcome />
+            <Sum numbers={[5, 1, 9]} />
         </React.Fragment>
     }
 }
