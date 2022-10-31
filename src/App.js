@@ -1,5 +1,5 @@
 import React from "react"
-import ClickCounter from "./ClickCounter"
+import  ClickCounter  from "./ClickCounter"
 import { ClickTracker } from "./ClickTracker"
 import { Container } from "./Container"
 import { Counter } from "./Counter"
