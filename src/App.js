@@ -2,7 +2,7 @@ import React from "react"
 import  ClickCounter  from "./ClickCounter"
 import { ClickTracker } from "./ClickTracker"
 import { Container } from "./Container"
-import { Counter } from "./Counter"
+import  Counter  from "./Counter"
 import { Hello } from "./Hello"
 import { InteractiveWelcome } from "./InteractiveWelcome"
 import { Login } from "./Login"
@@ -25,7 +25,7 @@ export class App extends React.Component {
         return <React.Fragment>
             <Hello />
             <InteractiveWelcome />
-            <Counter initialValue={0} incrementAmount={1} incrementInterval={1000} />
+            <Counter />
             <ClickCounter onCounterChange = {(counter)=> {
                         return console.log("The counter is" + counter)
                     }}/>

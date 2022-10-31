@@ -1,23 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CounterDisplay } from "./CounterDisplay";
 
-export class Counter extends React.Component {
-    state = { count: this.props.initialValue };
+export default function Counter({initialValue = 0, incrementInterval = 1000, incrementAmount = 1 }) {
+	const [count, setCount] = useState(initialValue);
 
-	componentDidMount() {
-		setInterval(() => {
-			this.setState({
-				count: this.state.count + this.props.incrementAmount 
-			});
-		}, this.props.incrementInterval);
-	}
+	useEffect(
+		() => {
+			const timer = setInterval(() => {
+				setCount((c) => c + incrementAmount);
+			}, incrementInterval);
 
-	render() {
-		return (			
-				<CounterDisplay displayCounter={this.state.count} />			
-		);
-	}
+			return () => {
+				clearInterval(timer);
+			};
+		},
+		[count, incrementAmount, incrementInterval]
+	);
+
+	return (
+		<React.Fragment>
+			<CounterDisplay count={count} />
+		</React.Fragment>
+	);
 }
-
-// con il constructor abbiamo una doppia renderizzazione
-
