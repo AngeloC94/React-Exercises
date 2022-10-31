@@ -1,18 +1,19 @@
-import React from 'react';
-import { useState } from 'react';
-export default function ClickCounter({ initialValue = 0 }) {
+import React, { useEffect, useState } from "react";
 
-    const [counter, setCounter] = useState(initialValue)
+export default function ClickCounter(props, {initial = 0}) {
+    let [counter, setCounter] = useState(initial)
 
-    function handleCounterIncrement() {
-        setCounter(counter + 1)
-    };
-
-
-    return (
-        <div>
-            <h2>Count : {counter}</h2>
-            <button onClick={handleCounterIncrement}>Increment</button>
-        </div>
-    );
+    const countEvents= () => {
+        setCounter(counter += 1)
+    }
+    useEffect(() => {
+        props.onCounterChange(counter)
+    }, [counter, props])
+    
+    
+    
+    return (<>    
+        <h1>You clicked {counter} times</h1>
+        <button onClick={countEvents}>Click to count</button>
+    </>)
 }

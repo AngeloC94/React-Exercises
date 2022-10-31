@@ -12,16 +12,23 @@ import { Sum } from "./Sum"
 import Welcome from "./Welcome"
 import { LanguageComponent, LanguageContext } from "./LanguageContext"
 
+
+
 export class App extends React.Component {
     state = {
         language: 'en'
     };
+
+   
+    
     render() {
         return <React.Fragment>
             <Hello />
             <InteractiveWelcome />
             <Counter initialValue={0} incrementAmount={1} incrementInterval={1000} />
-            <ClickCounter />
+            <ClickCounter onCounterChange = {(counter)=> {
+                        return console.log("The counter is" + counter)
+                    }}/>
             <ClickTracker />
             <Login />
             <UncontrolledLogin />
