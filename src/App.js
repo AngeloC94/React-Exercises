@@ -11,6 +11,7 @@ import { UncontrolledLogin } from "./UncontrolledLogin"
 import { Sum } from "./Sum"
 import Welcome from "./Welcome"
 import { LanguageComponent, LanguageContext } from "./LanguageContext"
+import { GitHubUser } from "./GithubUser"
 
 
 
@@ -49,6 +50,7 @@ export class App extends React.Component {
             </LanguageContext.Provider>
             <Welcome />
             <Sum numbers={[5, 1, 9]} />
+            <GitHubUser />
         </React.Fragment>
     }
 }
