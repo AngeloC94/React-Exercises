@@ -11,8 +11,9 @@ import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Sum } from "./Sum";
 import Welcome from "./Welcome";
 import { LanguageComponent, LanguageContext } from "./LanguageContext";
-import  GitHubUser  from "./GithubUser";
+import GitHubUser from "./GithubUser";
 import GithubUserList from "./GithubUserList";
+import CustomCounter from "./useCounter";
 
 export class App extends React.Component {
   state = {
@@ -58,6 +59,7 @@ export class App extends React.Component {
         <Sum numbers={[5, 1, 9]} />
         <GitHubUser />
         <GithubUserList />
+        <CustomCounter />
       </React.Fragment>
     );
   }
