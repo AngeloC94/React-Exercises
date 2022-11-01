@@ -14,6 +14,7 @@ import { LanguageComponent, LanguageContext } from "./LanguageContext";
 import GitHubUser from "./GithubUser";
 import GithubUserList from "./GithubUserList";
 import CustomCounter from "./useCounter";
+import { CustomLogin } from "./useForm";
 
 export class App extends React.Component {
   state = {
@@ -60,6 +61,7 @@ export class App extends React.Component {
         <GitHubUser />
         <GithubUserList />
         <CustomCounter />
+        <CustomLogin />
       </React.Fragment>
     );
   }
