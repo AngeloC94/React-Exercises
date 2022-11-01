@@ -16,6 +16,7 @@ import GithubUserList from "./GithubUserList";
 import CustomCounter from "./useCounter";
 import { CustomLogin } from "./useForm";
 import FilteredList from "./FilteredList";
+import CarDetails from "./CarDetails";
 
 export class App extends React.Component {
   state = {
@@ -64,6 +65,9 @@ export class App extends React.Component {
         <CustomCounter />
         <CustomLogin />
         <FilteredList />
+        <CarDetails
+          initialData={{ model: "FIAT Panda", year: "2010", color: "Blue" }}
+        />
       </React.Fragment>
     );
   }
